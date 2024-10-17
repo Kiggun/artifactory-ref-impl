@@ -72,6 +72,9 @@ ENV hsm_client_path=${base_path}/libs-release-local/hsm
 # environment variable for mosip-plugins zip path
 ENV mosip_plugins_zip_path=${base_path}/libs-release-local/mosip-plugins
 
+# environment variable for custom-impl jar path
+ENV custom_zip_path=${base_path}/libs-release-local/impl
+
 # environment valiable for sdk jar
 ENV sdk_path=${base_path}/libs-release-local/mock-sdk/1.1.5/
 
@@ -161,6 +164,8 @@ COPY /src/i18n/pre-registration-i18n-bundle/*  ${work_dir}/pre-registration-i18n
 COPY /src/master-templates/* ${work_dir}/master-templates/
 
 COPY /src/i18n/idp-i18n-bundle/*  ${work_dir}/idp-i18n-bundle/
+
+COPY /src/impl/* ${custom_zip_path}/
 
 COPY /src/i18n/oidc-demo-i18n-bundle/*  ${work_dir}/oidc-demo-i18n-bundle/
 
